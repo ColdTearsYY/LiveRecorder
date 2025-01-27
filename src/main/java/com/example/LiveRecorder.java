@@ -63,9 +63,11 @@ public class LiveRecorder extends JavaPlugin {
         return true;
     }
 
-    private void reloadConfig() {
-        // 重新加载配置文件的逻辑
+    @Override
+    public void reloadConfig() {
+        super.reloadConfig();  // Or any custom logic for reloading config
     }
+
 
     // 用于处理玩家跟随和直播的逻辑
     public void startLive(Player player) {
