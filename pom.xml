@@ -7,11 +7,20 @@
     <artifactId>LiveRecorder</artifactId>
     <version>1.0</version>
     <name>LiveRecorder</name>
+
+    <repositories>
+        <!-- Add Spigot repository to fetch Bukkit dependencies -->
+        <repository>
+            <id>spigot-repo</id>
+            <url>https://hub.spigotmc.org/nexus/content/repositories/public/</url>
+        </repository>
+    </repositories>
+
     <dependencies>
         <dependency>
             <groupId>org.bukkit</groupId>
             <artifactId>bukkit</artifactId>
-            <version>1.8.8-R0.1-SNAPSHOT</version> <!-- Change this to support other versions -->
+            <version>1.8.8-R0.1-SNAPSHOT</version>
             <scope>provided</scope>
         </dependency>
     </dependencies>
