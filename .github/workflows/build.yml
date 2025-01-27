@@ -24,6 +24,9 @@ jobs:
         java-version: '8'
         distribution: 'adopt' # 可选 'zulu', 'temurin', 'adopt' 等
 
+    - name: Setup Gradle
+      uses: gradle/gradle-build-action@v2
+
     # 缓存 Gradle 依赖
     - name: Cache Gradle dependencies
       uses: actions/cache@v3
