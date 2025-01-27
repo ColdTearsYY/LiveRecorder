@@ -22,7 +22,7 @@ jobs:
       run: mvn clean install
 
     - name: Upload Artifacts
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v3  # Updated to v3
       with:
         name: LiveRecorder
         path: target/LiveRecorder-1.0.jar
