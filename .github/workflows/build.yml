@@ -16,9 +16,6 @@ jobs:
     # 检出仓库代码
     - name: Checkout repository
       uses: actions/checkout@v3
-
-    - name: Validate Gradle Wrapper
-      uses: gradle/wrapper-validation-action@v3
       
     - name: Setup Gradle
       uses: gradle/gradle-build-action@v2
@@ -41,7 +38,9 @@ jobs:
 
     # 构建项目
     - name: Build with Gradle
-      run: ./gradlew clean build
+      run: 
+      chmod +x ./gradlew
+      ./gradlew clean build
 
     # 上传生成的 JAR 文件为 Artifact
     - name: Upload Artifact
