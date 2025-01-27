@@ -1,0 +1,9 @@
+name: LiveRecorder
+version: 1.0
+main: LiveRecorder
+api-version: 1.13
+description: A simple Bukkit plugin for live streaming players.
+commands:
+  live:
+    description: Main command for LiveRecorder.
+    usage: /<command>

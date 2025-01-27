@@ -1,0 +1,33 @@
+plugins {
+    id 'java'
+}
+
+group = 'justba.dbro'
+version = '1.0'
+
+repositories {
+    mavenCentral()
+    maven { url = 'https://repo.bukkit.org/content/groups/public/' }
+}
+
+dependencies {
+    compileOnly 'org.bukkit:bukkit:1.14.4-R0.1-SNAPSHOT' // 使用 Bukkit API
+}
+
+java {
+    toolchain {
+        languageVersion.set(JavaLanguageVersion.of(8)) // 使用 Java 8
+    }
+}
+
+tasks.jar {
+    manifest {
+        attributes(
+                'Main-Class': 'LiveRecorder' // 指定主类
+        )
+    }
+    from {
+        configurations.compileClasspath.collect { it.isDirectory() ? it : zipTree(it) }
+    }
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+}
