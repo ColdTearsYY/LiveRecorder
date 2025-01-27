@@ -1,0 +1,10 @@
+# Ignore target folder where compiled JAR is stored
+/target/
+
+# Ignore IDE specific files (for IntelliJ IDEA, Eclipse, etc.)
+.idea/
+*.iml
+*.log
+
+# Ignore Maven wrapper files (if not using)
+.mvn/

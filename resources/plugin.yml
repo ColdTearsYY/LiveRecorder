@@ -1,8 +1,13 @@
 name: LiveRecorder
+main: com.example.LiveRecorder
 version: 1.0
-main: com.example.liverecorder.LiveRecorderPlugin
 api-version: 1.8
 commands:
   live:
-    description: 直播控制命令
-    usage: /<command> <subcommand>
+    description: 控制直播功能
+    usage: /live <target|time|recorder|reset|reload> [args]
+    permission: live.use
+permissions:
+  live.use:
+    description: 允许使用直播指令
+    default: true
