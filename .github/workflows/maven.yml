@@ -17,12 +17,13 @@ jobs:
       uses: actions/setup-java@v2
       with:
         java-version: '8'
+        distribution: 'adoptopenjdk'  # Add this line specifying the JDK distribution
 
     - name: Build with Maven
       run: mvn clean install
 
     - name: Upload Artifacts
-      uses: actions/upload-artifact@v3  # Updated to v3
+      uses: actions/upload-artifact@v3
       with:
         name: LiveRecorder
         path: target/LiveRecorder-1.0.jar
