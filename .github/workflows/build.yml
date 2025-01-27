@@ -38,7 +38,7 @@ jobs:
 
     # 构建项目
     - name: Build with Gradle
-      run: 
+      run: |
         chmod +x ./gradlew
         ./gradlew clean build
 
