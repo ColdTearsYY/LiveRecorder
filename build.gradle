@@ -2,32 +2,20 @@ plugins {
     id 'java'
 }
 
-group = 'justba.dbro'
-version = '1.0'
+group 'com.example'
+version '1.0'
+sourceCompatibility = '1.8'
 
 repositories {
     mavenCentral()
-    maven { url = 'https://repo.bukkit.org/content/groups/public/' }
+    maven { url = uri('https://hub.spigotmc.org/nexus/content/repositories/snapshots/') }
 }
 
 dependencies {
-    compileOnly 'org.bukkit:bukkit:1.14.4-R0.1-SNAPSHOT' // 使用 Bukkit API
+    compileOnly 'org.bukkit:bukkit:1.14.4-R0.1-SNAPSHOT'
 }
 
-java {
-    toolchain {
-        languageVersion.set(JavaLanguageVersion.of(8)) // 使用 Java 8
-    }
-}
-
-tasks.jar {
-    manifest {
-        attributes(
-                'Main-Class': 'LiveRecorder' // 指定主类
-        )
-    }
-    from {
-        configurations.compileClasspath.collect { it.isDirectory() ? it : zipTree(it) }
-    }
-    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+jar {
+    archiveBaseName.set('LiveRecorder')
+    archiveVersion.set('1.0')
 }
