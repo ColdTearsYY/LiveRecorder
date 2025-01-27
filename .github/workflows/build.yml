@@ -39,8 +39,8 @@ jobs:
     # 构建项目
     - name: Build with Gradle
       run: 
-      chmod +x ./gradlew
-      ./gradlew clean build
+        chmod +x ./gradlew
+        ./gradlew clean build
 
     # 上传生成的 JAR 文件为 Artifact
     - name: Upload Artifact
